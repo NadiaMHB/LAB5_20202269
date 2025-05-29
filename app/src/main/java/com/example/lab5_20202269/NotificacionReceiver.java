@@ -123,13 +123,6 @@ public class NotificacionReceiver extends BroadcastReceiver {
     }
 
     private String obtenerAccionPorTipo(String tipo, String dosis) {
-        // Validar parámetros de entrada
-        if (tipo == null) {
-            tipo = "pastilla"; // Valor por defecto
-        }
-        if (dosis == null || dosis.isEmpty()) {
-            dosis = "1 unidad";
-        }
 
         switch (tipo.toLowerCase().trim()) {
             case "pastilla":
@@ -138,7 +131,6 @@ public class NotificacionReceiver extends BroadcastReceiver {
                 return "Tomar " + dosis + " de jarabe";
             case "ampolla":
                 return "Aplicar " + dosis + " ampolla(s)";
-            case "cápsula":
             case "capsula":
                 return "Tomar " + dosis + " cápsula(s)";
             default:
@@ -159,7 +151,6 @@ public class NotificacionReceiver extends BroadcastReceiver {
                 return R.drawable.ic_syrup;
             case "ampolla":
                 return R.drawable.ic_injection;
-            case "cápsula":
             case "capsula":
                 return R.drawable.ic_capsule;
             default:
